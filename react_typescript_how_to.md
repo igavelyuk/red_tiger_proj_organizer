@@ -100,3 +100,19 @@ To create a production build, use npm run build.
 
 ```
 4. Add SASS or SCSS
+* Installing node-sass-chokidar and npm-run-Install
+
+`npm install --save npm-run-all node-sass-chokidar`
+or
+`npm i npm-run-all node-sass-chokidar -S`
+
+add to the package.json in section scripts
+```bash
+"start": "npm-run-all -p watch-css start-js",
+"build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o /src",
+"watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o /src --watch --recursive",
+"start-js": "react-scripts start",
+"build-js": "npm run build-css && react-scripts build",
+```
+use:
+sudo npm start
