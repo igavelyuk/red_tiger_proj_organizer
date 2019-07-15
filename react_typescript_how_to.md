@@ -99,3 +99,4 @@ Note that the development build is not optimized.
 To create a production build, use npm run build.
 
 ```
+4. Add SASS or SCSS
