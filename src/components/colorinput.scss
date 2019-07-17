@@ -1,0 +1,103 @@
+.separator {
+  margin-bottom: 30px;
+}
+
+select {
+  height: auto;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* remove default arrow */
+  background-color: rgb(250,100,100);
+  background-image: linear-gradient(to top left, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 50%), linear-gradient(to top right, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 50%);
+  background-size: 100% 100%, 50px 50px;
+  background-position: left top, left bottom;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 34px;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 30px;
+}
+
+fieldset {
+  top: 0;
+  width: 90%;
+  display: block;
+}
+
+.sqr {
+  background-color: #f00;
+  margin-top: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+.b43,
+.january {
+  background-color: #00838f;
+}
+
+.b27,
+.february {
+  background-color: #00796b;
+}
+
+.b17,
+.march {
+  background-color: #1b5e20;
+}
+
+.april,
+.b7 {
+  background-color: #afb42b;
+}
+
+.b16,
+.may {
+  background-color: #ffeb3b;
+}
+
+.b26,
+.june {
+  background-color: #e65100;
+}
+
+.b42,
+.july {
+  background-color: #d50000;
+}
+
+.august,
+.b52 {
+  background-color: #880e4f;
+}
+
+.b63,
+.september {
+  background-color: #6a1b9a;
+}
+
+.b67,
+.october {
+  background-color: #3e2723;
+}
+
+.b62,
+.november {
+  background-color: #757575;
+}
+
+.b53,
+.december {
+  background-color: #0d47a1;
+}

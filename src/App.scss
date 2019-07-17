@@ -1,34 +1,44 @@
-$color: #133;
+$background-color: #133;
+$text-color:#dff;
+
+body{
+  background-color: $background-color;
+}
+header{
+  font-size: 2rem;
+}
 .App {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color:$text-color;
   text-align: center;
+  background-color: $background-color;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.Wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "a a"
+  "b c";
+  margin:2rem 0;
 }
-
-.App-header {
-  background-color: $color;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Wrapper::before{
+  display: inline-grid;
 }
-
-.App-link {
-  color: #61dafb;
+.Wrapper header{
+  grid-area: a;
+  padding: 1rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Wrapper section:first-of-type{
+  grid-area: b;
+  padding: 1rem;
+}
+.Wrapper section:last-of-type{
+  grid-area: c;
+  padding: 1rem;
 }
