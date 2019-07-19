@@ -1,30 +1,50 @@
 import React, {Component} from 'react';
 import './colorinput.scss';
-import XYear from './../interfaces/outputinterface';
+import ColorNamer from './../interfaces/outputinterface';
 
-export class Colorinput extends Component <XYear>{
-  public state = {
-    name:"Test"
+export class Colorinput extends Component <ColorNamer> {
+year:{};
+month:React.RefObject<HTMLSelectElement>
+//month:React.Ref<HTMLOptionElement>;
+firststring: React.RefObject<HTMLInputElement>;
+secondstring: React.RefObject<HTMLInputElement>;
+resultstring: React.RefObject<HTMLInputElement>;
+constructor(props:ColorNamer){
+  super(props);
+  this.state={
+    year: "2019",
+    month: "hjhjhj",
+    firststring: '_',
+    secondstring:'_',
+    resultstring:'_'
   }
+  this.firststring = React.createRef();
+  this.secondstring = React.createRef();
+  this.resultstring = React.createRef();
+}
+Test = () => {
+  console.log(this.month);
+}
+Compute = () => {
+  this.resultstring.current.value =this.month.current.value+'_'+this.firststring.current.value+'_'+this.secondstring.current.value;
+}
   render(){
-    const {year,month} = this.props;
+    /* const {year,month,state,handleChange} = this.props;
     console.log(this.props.year);
-    console.log(this.props.month);
-    console.log(this.state.name);
-
+    console.log(this.props.month); */
     return (
       <div>
         <div className="separator" >
-         This text can be edited by the user. {this.props.year}
+         This text can be edited by the user.
         </div>
         <form id="general" action="index.html" method="post">
           <fieldset>
             <legend>Select month</legend>
-            <select id="month-name">
+            <select onChange = {this.Test} ref={this.month as any}>
               <option value="NULL">
                 <span className="value">Select Month</span>
               </option>
-              <option value="January" className="january">January</option>
+              <option value="January" className="january" >January</option>
               <option value="February" className="february">February</option>
               <option value="March" className="march">March</option>
               <option value="April" className="april">April</option>
@@ -40,15 +60,15 @@ export class Colorinput extends Component <XYear>{
           </fieldset>
           <fieldset>
             <legend>Main name</legend>
-            <input id="main-name" type="text" name="" value={this.state.name} />
+            <input type="text" ref={this.firststring} onChange = {this.Compute}/>
           </fieldset>
           <fieldset>
             <legend>Service name</legend>
-            <input id="service-name" type="text" name="" value="" />
+            <input type="text" ref={this.secondstring} onChange = {this.Compute}/>
           </fieldset>
           <fieldset>
             <legend>Result</legend>
-            <input id="result" type="text" name="" value={this.state.name} />
+            <input type="text" ref={this.resultstring} onChange = {this.Compute}/>
           </fieldset>
         </form>
 
