@@ -19,7 +19,7 @@ constructor(props: ColorNamer){
     resultstring:'_'
   }
   // this.Compute();
-  this.year = new Number();
+  this.year = Number();
   this.month = React.createRef();
   this.firststring = React.createRef();
   this.secondstring = React.createRef();
@@ -38,7 +38,7 @@ FindYear = (xvalue:number) => {
   let x = [2017,2018,2019,2020,2021];
   let y = ["rabbit","foxy","tiger","mouse","beaver"];
   for (let i = 0; i < x.length; i++) {
-      if(x[i]==xvalue){
+      if(x[i]===xvalue){
         return y[i];
       }
   }
@@ -59,7 +59,7 @@ FindMonthsColour = (xvalue:string) => {
     ['b53','Blue', '#0d47a1', 'December', '31 days']
   ];
   for (let i = 0; i < monthNameArray.length; i++) {
-      if(monthNameArray[i][3]==xvalue){
+      if(monthNameArray[i][3]===xvalue){
         return monthNameArray[i][1];
       }
   }
