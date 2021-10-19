@@ -12,4 +12,6 @@ Will be added later all stuff where I've got problems and how I solve it.
 1. Name semi-automatic generator
 2. Color coder
 
-Date: 30 jul 2019
+```
+Date: 19 oct 2021
+```
